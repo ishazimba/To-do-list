@@ -1,26 +1,44 @@
+# Redirects and rewrites settings (optional)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
+# Basic build settings (optional)
 [build]
-  # Directory where your built site will be placed. This is the output directory
-  # after your build process.
-  publish = "build"
+  publish = "build" # Specify the directory to publish (default is "public" or "dist" for certain frameworks)
+  command = "npm run build" # Specify the build command (default is "npm install && npm run build")
 
-  # Command to build your site. Replace with your actual build command.
-  command = "npm run build"
-
-# If you have environment variables or specific Node.js version requirements,
-# you can set them here. For example:
-
+# Environment variables (optional)
+# You can specify environment variables here if needed
+# Example:
 # [build.environment]
-#   NODE_VERSION = "14"
+#   REACT_APP_API_KEY = "your_api_key"
 
-# Uncomment the following lines if you need to specify custom headers and redirects:
-#
-# [[headers]]
-#   for = "/*"
-#   [headers.values]
-#     Access-Control-Allow-Origin = "*"
-#
-# [[redirects]]
-#   from = "/old-url"
-#   to = "/new-url"
-#   status = 301
+# Headers configuration (optional)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+# Functions directory (optional, for serverless functions)
+# [functions]
+#   directory = "netlify/functions"
+
+# Asset optimization (optional)
+# [build.processing]
+#   css = { bundle: true, minify: true }
+#   js = { bundle: true, minify: true, external: true }
+
+# Custom domain (optional)
+# [build.custom]
+#   domain = "your-custom-domain.com"
+
+# Proxy settings (optional, for API proxying)
+# [build.proxy]
+#   "/api" = "http://your-api-server.com"
+
+# Identity settings (optional, for Netlify Identity)
+# [build]
+#   identity = "your-netlify-identity-instance-name"
