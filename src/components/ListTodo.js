@@ -7,12 +7,9 @@ const ListTodos = () => {
   //delete todo function
   const deleteTodo = async (id) => {
     try {
-      const deleteTodo = await fetch(
-        `https://mytodolist-96gk.onrender.com/todos/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      await fetch(`https://mytodolist-96gk.onrender.com/todos/${id}`, {
+        method: "DELETE",
+      });
       setTodos(todos.filter((todo) => todo.id !== id));
     } catch (err) {
       console.error(err.message);
