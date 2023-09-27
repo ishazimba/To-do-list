@@ -7,7 +7,7 @@ Welcome to the ToDo List App, a simple task management web application built wit
 
 ## Live Demo
 
-Explore the live demo: [ToDo List App Live Demo](https://your-netlify-app-url.com)
+Explore the live demo: [ToDo List App Live Demo](https://my-todolist-manager.netlify.app/)
 
 ## Features
 
