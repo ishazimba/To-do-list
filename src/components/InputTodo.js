@@ -6,14 +6,11 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(
-        "https://mytodolist-96gk.onrender.com/todos",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        }
-      );
+      await fetch("https://mytodolist-96gk.onrender.com/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
       window.location = "/"; // so once the response has been sent, its going to refresh and show the changes
     } catch (err) {

@@ -9,14 +9,11 @@ const EditTodo = ({ todo }) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch(
-        `https://mytodolist-96gk.onrender.com/todos/${todo.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body),
-        }
-      );
+      await fetch(`https://mytodolist-96gk.onrender.com/todos/${todo.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
       window.location = "/";
     } catch (err) {
       console.error(err.message);
