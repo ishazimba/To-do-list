@@ -1,0 +1,26 @@
+
+[build]
+  # Directory where your built site will be placed. This is the output directory
+  # after your build process.
+  publish = "build"
+
+  # Command to build your site. Replace with your actual build command.
+  command = "npm run build"
+
+# If you have environment variables or specific Node.js version requirements,
+# you can set them here. For example:
+
+# [build.environment]
+#   NODE_VERSION = "14"
+
+# Uncomment the following lines if you need to specify custom headers and redirects:
+#
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Access-Control-Allow-Origin = "*"
+#
+# [[redirects]]
+#   from = "/old-url"
+#   to = "/new-url"
+#   status = 301
